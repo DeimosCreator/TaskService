@@ -53,7 +53,7 @@ docker compose up -d db rabbitmq
 dotnet run --project TaskService/TaskService.csproj
 ```
 
-Swagger UI будет доступен по адресу: http://localhost:5000/swagger
+Swagger UI будет доступен по адресу: http://localhost:8080/swagger
 
 ## Как запустить тесты
 
