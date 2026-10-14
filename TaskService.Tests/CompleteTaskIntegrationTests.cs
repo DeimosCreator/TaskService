@@ -20,6 +20,7 @@ public class CompleteTaskIntegrationTests(WebApplicationFactory<Program> factory
 
         var client = factory.WithWebHostBuilder(builder =>
         {
+            builder.UseSetting("ConnectionStrings:Default", "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres");
             builder.ConfigureTestServices(services =>
             {
                 var descriptor = services.SingleOrDefault(d => d.ServiceType == typeof(ITaskEventPublisher));
