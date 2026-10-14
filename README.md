@@ -1,5 +1,4 @@
-
-# Task Service API (Test Assignment)
+# Task Service API
 
 Микросервис для управления задачами, написанный на **.NET 9** (Minimal API) с использованием **PostgreSQL**, **EF Core** и **RabbitMQ**.
 
@@ -31,6 +30,8 @@ POSTGRES_PASSWORD=postgres
 RABBITMQ_DEFAULT_USER=guest
 RABBITMQ_DEFAULT_PASS=guest
 ```
+
+> Убедитесь, что строка подключения `ConnectionStrings` в файле `TaskService/appsettings.json` совпадает с учетными данными из вашего файла `.env`.
 
 ### Шаг 2. Поднятие инфраструктуры
 
