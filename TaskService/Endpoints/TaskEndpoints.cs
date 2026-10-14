@@ -102,7 +102,7 @@ public static class TaskEndpoints
             }
 
             return Results.Ok(new TaskItemDto(
-                task.Id, task.Title, task.IsCompleted, task.CompletedAt, task.CompletedAt, task.Priority));
+                task.Id, task.Title, task.IsCompleted, task.CreatedAt, task.CompletedAt, task.Priority));
         });
 
         return app;
