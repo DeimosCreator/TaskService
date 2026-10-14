@@ -27,5 +27,18 @@
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
       ConnectionStrings__Default: "Host=db;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
+      
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: task_rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitdata:/var/lib/rabbitmq
 volumes:
   pgdata:
+  rabbitdata:

@@ -7,7 +7,7 @@ public record TaskItemDto(
     Guid Id,
     string Title,
     bool IsCompleted,
-    DateTimeOffset CreatedAt,
+    DateTimeOffset? CreatedAt,
     DateTimeOffset? CompletedAt,
     Priority Priority);
     
@@ -24,7 +24,7 @@ public record TaskCompletedEvent
     public string Title { get; init; } = string.Empty;
 
     [JsonPropertyName("completedAt")]
-    public DateTimeOffset CompletedAt { get; init; }
+    public DateTimeOffset? CompletedAt { get; init; }
 
     [JsonPropertyName("priority")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
